@@ -1,0 +1,30 @@
+package labsheet2;
+import java.util.Scanner;
+
+class TriangleCheck {
+    int a, b, c;
+    TriangleCheck(int a, int b, int c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
+    boolean isValid() {
+        return a > 0 && b > 0 && c > 0 && (a + b + c == 180);
+    }
+}
+
+public class Q8 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter three angles: ");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+        TriangleCheck obj = new TriangleCheck(a, b, c);
+        if (obj.isValid())
+            System.out.println("Valid triangle");
+        else
+            System.out.println("Invalid triangle");
+        sc.close();
+    }
+}
